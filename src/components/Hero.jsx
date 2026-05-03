@@ -27,7 +27,7 @@ function StatCard({ num, suffix, label }) {
 
   return (
     <div ref={ref}
-      className="flex-1 px-6 py-5 border-r border-[rgba(var(--green-primary-rgb),0.15)] last:border-r-0
+      className="flex-1 basis-full min-w-0 sm:basis-1/2 px-6 py-5 border-b border-[rgba(var(--green-primary-rgb),0.12)] last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0
         relative overflow-hidden group transition-all duration-300 hover:bg-[rgba(var(--green-primary-rgb),0.04)] cursor-default">
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-green-primary to-transparent
         scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
@@ -122,9 +122,9 @@ export default function Hero() {
         <div className="flex flex-col items-center gap-5 lg:items-end">
 
           {/* AVATAR — static, baked into build, no one else can change it */}
-          <div className="corner-box border border-[rgba(var(--green-primary-rgb),0.35)] bg-bg-card p-1 relative"
+          <div className="corner-box border border-[rgba(var(--green-primary-rgb),0.35)] bg-bg-card p-1 relative w-full max-w-[18rem]"
             style={{ boxShadow: '0 0 50px rgba(var(--green-primary-rgb),0.1)' }}>
-            <div className="relative w-72 h-72">
+            <div className="relative w-full h-[18rem]">
               <img
                 src={avatarImg}
                 alt="Santhosh Devale"
@@ -145,7 +145,7 @@ export default function Hero() {
           </div>
 
           {/* PROFILE CARD */}
-          <div className="corner-box border border-[rgba(var(--green-primary-rgb),0.18)] bg-bg-card w-72">
+          <div className="corner-box border border-[rgba(var(--green-primary-rgb),0.18)] bg-bg-card w-full max-w-[18rem]">
             <div className="px-5 py-4 border-b border-[rgba(var(--green-primary-rgb),0.12)]">
               <div className="font-bold text-ink text-[0.95rem]">{profile.name}</div>
               <div className="font-sans text-[0.65rem] text-green-primary tracking-wider mt-0.5">{profile.role}</div>

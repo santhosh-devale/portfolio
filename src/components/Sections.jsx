@@ -67,9 +67,9 @@ export function About() {
                 ['Languages', profile.languages],
                 ['Status',    '● Open to work'],
               ].map(([k, v]) => (
-                <div key={k} className={`flex border ${GB} group hover:${GB2} hover:bg-[rgba(var(--green-primary-rgb),0.04)] transition-all duration-200 relative overflow-hidden left-bar`}>
-                  <span className={`font-sans text-[0.65rem] tracking-widest uppercase text-green-primary px-3 py-3 min-w-[110px] border-r ${GB} ${GBG}`}>{k}</span>
-                  <span className={`text-[0.8rem] px-4 py-3 ${k === 'Status' ? 'text-green-primary' : 'text-ink-muted'}`}>{v}</span>
+                <div key={k} className={`flex flex-col md:flex-row border ${GB} group hover:${GB2} hover:bg-[rgba(var(--green-primary-rgb),0.04)] transition-all duration-200 relative overflow-hidden left-bar`}>
+                  <span className={`font-sans text-[0.65rem] tracking-widest uppercase text-green-primary px-3 py-3 w-full md:w-[110px] border-b border-[rgba(var(--green-primary-rgb),0.12)] md:border-b-0 md:border-r ${GB} ${GBG}`}>{k}</span>
+                  <span className={`text-[0.8rem] px-4 py-3 ${k === 'Status' ? 'text-green-primary' : 'text-ink-muted'} w-full md:flex-1`}>{v}</span>
                 </div>
               ))}
             </div>
@@ -179,7 +179,7 @@ function SkillBar({ name, pct }) {
 
   return (
     <div ref={ref} className="flex items-center gap-3 mb-3">
-      <span className="font-sans text-[0.72rem] text-ink-muted min-w-[135px]">{name}</span>
+      <span className="font-sans text-[0.72rem] text-ink-muted min-w-[100px] md:min-w-[135px]">{name}</span>
       <div className="flex-1 h-[3px] bg-white/5 relative overflow-visible">
         <div ref={fillRef}
           style={{ transform: 'scaleX(0)', transformOrigin: 'left', height: '100%', background: 'linear-gradient(90deg,var(--green-primary),var(--green-bright))', position: 'relative' }}>
@@ -187,7 +187,7 @@ function SkillBar({ name, pct }) {
             style={{ boxShadow: '0 0 7px var(--green-primary)' }} />
         </div>
       </div>
-      <span className="font-sans text-[0.65rem] text-ink-faint min-w-[30px] text-right">{pct}%</span>
+      <span className="font-sans text-[0.65rem] text-ink-faint min-w-[24px] text-right">{pct}%</span>
     </div>
   )
 }
