@@ -2,13 +2,13 @@ import { useRef, useEffect } from 'react'
 import { Star, GitFork, Code2, PenTool, Terminal, Monitor, Award } from 'lucide-react'
 import { profile, experience, projects, skills, domainExpertise, education } from '../data/portfolio'
 
-const GB  = 'border-[rgba(0,255,136,0.18)]'
-const GB2 = 'border-[rgba(0,255,136,0.35)]'
-const GBG = 'bg-[rgba(0,255,136,0.06)]'
+const GB  = 'border-[rgba(var(--green-primary-rgb),0.18)]'
+const GB2 = 'border-[rgba(var(--green-primary-rgb),0.35)]'
+const GBG = 'bg-[rgba(var(--green-primary-rgb),0.06)]'
 
 export function Tag({ children }) {
   return (
-    <span className={`font-sans text-[0.62rem] tracking-wider px-2.5 py-1 border ${GB2} text-green-primary ${GBG} hover:bg-[rgba(0,255,136,0.12)] transition-all duration-200`}>
+    <span className={`font-sans text-[0.62rem] tracking-wider px-2.5 py-1 border ${GB2} text-green-primary ${GBG} hover:bg-[rgba(var(--green-primary-rgb),0.12)] transition-all duration-200`}>
       {children}
     </span>
   )
@@ -67,7 +67,7 @@ export function About() {
                 ['Languages', profile.languages],
                 ['Status',    '● Open to work'],
               ].map(([k, v]) => (
-                <div key={k} className={`flex border ${GB} group hover:${GB2} hover:bg-[rgba(0,255,136,0.04)] transition-all duration-200 relative overflow-hidden left-bar`}>
+                <div key={k} className={`flex border ${GB} group hover:${GB2} hover:bg-[rgba(var(--green-primary-rgb),0.04)] transition-all duration-200 relative overflow-hidden left-bar`}>
                   <span className={`font-sans text-[0.65rem] tracking-widest uppercase text-green-primary px-3 py-3 min-w-[110px] border-r ${GB} ${GBG}`}>{k}</span>
                   <span className={`text-[0.8rem] px-4 py-3 ${k === 'Status' ? 'text-green-primary' : 'text-ink-muted'}`}>{v}</span>
                 </div>
@@ -89,12 +89,12 @@ export function Experience() {
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-ink mb-14">
           Career <span className="text-gradient">Timeline</span>
         </h2>
-        <div className="relative max-w-3xl" style={{ borderLeft: '1px solid rgba(0,255,136,0.18)' }}>
+        <div className="relative max-w-3xl" style={{ borderLeft: '1px solid rgba(var(--green-primary-rgb),0.18)' }}>
           {experience.map((e, i) => (
             <Reveal key={i} delay={i * 100} className="pl-10 pb-12 last:pb-0 relative">
               <div
                 className={`absolute left-[-6px] top-1.5 w-3 h-3 rotate-45 border z-10 transition-colors ${e.current ? 'bg-green-primary border-green-primary' : `bg-bg ${GB2}`}`}
-                style={e.current ? { boxShadow: '0 0 14px rgba(0,255,136,0.6)' } : {}}
+                style={e.current ? { boxShadow: '0 0 14px rgba(var(--green-primary-rgb),0.6)' } : {}}
               />
               <div className="flex flex-wrap items-center gap-2 font-sans text-[0.68rem] text-ink-muted tracking-wider mb-2">
                 <span>{e.period}</span>
@@ -135,7 +135,7 @@ export function Projects() {
         <p className="text-ink-muted text-[0.88rem] mb-14 max-w-xl">
           My most meaningful repositories — apps, dashboards, and tools built for healthcare field support, patient workflows, and operations automation.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[rgba(0,255,136,0.1)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-[rgba(var(--green-primary-rgb),0.1)]">
           {projects.map((p, i) => (
             <Reveal key={i} delay={i * 70}
               className="bg-bg p-7 flex flex-col relative overflow-hidden group hover:bg-bg-card transition-all duration-300 cursor-default top-glow">
@@ -182,9 +182,9 @@ function SkillBar({ name, pct }) {
       <span className="font-sans text-[0.72rem] text-ink-muted min-w-[135px]">{name}</span>
       <div className="flex-1 h-[3px] bg-white/5 relative overflow-visible">
         <div ref={fillRef}
-          style={{ transform: 'scaleX(0)', transformOrigin: 'left', height: '100%', background: 'linear-gradient(90deg,#00ff88,#39ff6a)', position: 'relative' }}>
+          style={{ transform: 'scaleX(0)', transformOrigin: 'left', height: '100%', background: 'linear-gradient(90deg,var(--green-primary),var(--green-bright))', position: 'relative' }}>
           <div className="absolute right-[-3px] top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full bg-green-primary"
-            style={{ boxShadow: '0 0 7px #00ff88' }} />
+            style={{ boxShadow: '0 0 7px var(--green-primary)' }} />
         </div>
       </div>
       <span className="font-sans text-[0.65rem] text-ink-faint min-w-[30px] text-right">{pct}%</span>
@@ -248,7 +248,7 @@ export function Education() {
           {education.map((e, i) => (
             <Reveal key={i} delay={i * 100}
               className={`border ${GB} bg-bg p-7 relative overflow-hidden group hover:${GB2} hover:bg-bg-card transition-all duration-300`}
-              style={{ borderLeft: '2px solid rgba(0,255,136,0.4)' }}>
+              style={{ borderLeft: '2px solid rgba(var(--green-primary-rgb),0.4)' }}>
               <div className="flex items-start justify-between gap-4 mb-2 flex-wrap">
                 <div className="text-[1rem] font-bold text-ink tracking-tight">{e.degree}</div>
                 <span className={`font-sans text-[0.65rem] text-green-primary border ${GB2} ${GBG} px-3 py-1 whitespace-nowrap`}>{e.year} · {e.short}</span>
@@ -263,3 +263,4 @@ export function Education() {
     </section>
   )
 }
+

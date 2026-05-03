@@ -2,9 +2,9 @@ import { useRef, useEffect } from 'react'
 import { Mail, Phone, Github } from 'lucide-react'
 import { profile } from '../data/portfolio'
 
-const G_BORDER  = 'border-[rgba(0,255,136,0.18)]'
-const G_BORDER2 = 'border-[rgba(0,255,136,0.35)]'
-const G_BG      = 'bg-[rgba(0,255,136,0.06)]'
+const G_BORDER  = 'border-[rgba(var(--green-primary-rgb),0.18)]'
+const G_BORDER2 = 'border-[rgba(var(--green-primary-rgb),0.35)]'
+const G_BG      = 'bg-[rgba(var(--green-primary-rgb),0.06)]'
 
 function Reveal({ children, delay = 0, className = '' }) {
   const ref = useRef(null)
@@ -53,7 +53,7 @@ export default function Contact() {
             <div className="flex flex-wrap gap-3">
               <a href={`mailto:${profile.email}`}
                 className="inline-flex items-center gap-2 font-sans text-[0.75rem] font-bold tracking-widest uppercase text-bg bg-green-primary px-7 py-3 clip-btn hover:bg-green-bright transition-all duration-200"
-                style={{ boxShadow: '0 0 22px rgba(0,255,136,0.25)' }}>
+                style={{ boxShadow: '0 0 22px rgba(var(--green-primary-rgb),0.25)' }}>
                 Send a Message
               </a>
               <a href={profile.github} target="_blank" rel="noreferrer"
@@ -84,3 +84,4 @@ export default function Contact() {
     </section>
   )
 }
+

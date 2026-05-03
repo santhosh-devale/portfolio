@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Particles from './components/Particles'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import { About, Experience, Projects, Skills, Education } from './components/Sections'
@@ -25,7 +24,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-bg grid-bg relative">
-      <Particles />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />

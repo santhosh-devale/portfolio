@@ -34,14 +34,14 @@ export default function Particles() {
         if (p.y < 0) p.y = H; if (p.y > H) p.y = 0
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,255,136,${p.a})`
+        ctx.fillStyle = `rgba(var(--green-primary-rgb),${p.a})`
         ctx.fill()
       })
       pts.forEach((a, i) => pts.slice(i + 1).forEach(b => {
         const d = Math.hypot(a.x - b.x, a.y - b.y)
         if (d < 110) {
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y)
-          ctx.strokeStyle = `rgba(0,255,136,${0.07 * (1 - d / 110)})`
+          ctx.strokeStyle = `rgba(var(--green-primary-rgb),${0.07 * (1 - d / 110)})`
           ctx.lineWidth = 0.5; ctx.stroke()
         }
       }))
@@ -57,3 +57,4 @@ export default function Particles() {
 
   return <canvas ref={ref} className="fixed inset-0 z-0 pointer-events-none" />
 }
+
