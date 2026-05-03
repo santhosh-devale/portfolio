@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Github, Mail, Menu, X } from 'lucide-react'
+import { Github, Moon, Sun, Menu, X } from 'lucide-react'
 
 const links = [
   { href:'#about',      label:'About',      num:'01' },
@@ -10,7 +10,7 @@ const links = [
   { href:'#contact',    label:'Contact',    num:'06' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between
       transition-all duration-300 border-b border-[rgba(0,255,136,0.15)]
-      bg-[rgba(5,13,5,0.92)] backdrop-blur-xl
+      bg-nav backdrop-blur-xl
       ${scrolled ? 'px-6 md:px-14 py-3' : 'px-6 md:px-14 py-4'}`}>
 
       <a href="#" className="flex items-center gap-3 group">
@@ -48,6 +48,11 @@ export default function Navbar() {
       </ul>
 
       <div className="hidden lg:flex gap-3 items-center">
+        <button onClick={toggleTheme}
+          className="flex items-center justify-center w-10 h-10 rounded-full border border-[rgba(0,255,136,0.35)] text-green-primary
+            hover:bg-[rgba(0,255,136,0.08)] transition-colors duration-200">
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
         <a href="https://github.com/santhosh-devale" target="_blank" rel="noreferrer"
           className="flex items-center gap-2 font-sans text-[0.68rem] tracking-widest uppercase
             text-green-primary border border-[rgba(0,255,136,0.35)] px-4 py-2
@@ -62,9 +67,16 @@ export default function Navbar() {
         </a>
       </div>
 
-      <button onClick={() => setOpen(!open)} className="lg:hidden text-green-primary p-1">
-        {open ? <X size={20}/> : <Menu size={20}/>}
-      </button>
+      <div className="flex items-center gap-2 lg:hidden">
+        <button onClick={toggleTheme}
+          className="flex items-center justify-center w-10 h-10 rounded-full border border-[rgba(0,255,136,0.35)] text-green-primary
+            hover:bg-[rgba(0,255,136,0.08)] transition-colors duration-200">
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
+        <button onClick={() => setOpen(!open)} className="text-green-primary p-1">
+          {open ? <X size={20}/> : <Menu size={20}/>}
+        </button>
+      </div>
 
       {open && (
         <div className="absolute top-full left-0 right-0 bg-bg-2 border-b border-[rgba(0,255,136,0.15)] px-6 py-4 lg:hidden">
