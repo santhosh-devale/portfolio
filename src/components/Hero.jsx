@@ -91,7 +91,7 @@ export default function Hero() {
             Healthcare technology professional with{' '}
             <strong className="text-ink font-semibold">4+ years</strong> experience bridging clinical operations
             and digital systems. Currently leading as{' '}
-            <strong className="text-ink font-semibold">Support Field Manager</strong> at 10BedICU, overseeing{' '}
+            <strong className="text-ink font-semibold">Field Solution Manager</strong> at 10BedICU, overseeing{' '}
             <strong className="text-green-primary font-semibold">CARE 3.0 HMIS</strong> across{' '}
             <strong className="text-ink font-semibold">43+ government hospitals</strong> in Karnataka.
           </p>

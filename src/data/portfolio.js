@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Santhosh Devale',
-  role: 'Support Field Manager',
+  role: 'Field Solution Manager',
   company: '10BedICU · eGov Foundation',
   client: 'HFWS, Govt. of Karnataka',
   location: 'Karnataka, India',
@@ -10,7 +10,7 @@ export const profile = {
   github: 'https://github.com/santhosh-devale',
   linkedin: 'https://linkedin.com',
   status: 'Open to work',
-  tagline: 'Healthcare technology professional with 4+ years experience bridging clinical operations and digital systems. Currently leading field support operations as Support Field Manager at 10BedICU, overseeing CARE 3.0 HMIS deployment across 43+ government hospitals in Karnataka.',
+  tagline: 'Healthcare technology professional with 4+ years experience bridging clinical operations and digital systems. Currently leading field support operations as Field Solution Manager at 10BedICU, overseeing CARE 3.0 HMIS deployment across 43+ government hospitals in Karnataka.',
   about: [
     'With over 4 years in health-tech, I specialise in deploying and supporting TeleICU and HMIS systems in government hospitals across Karnataka — translating complex clinical workflows into intuitive digital experiences for doctors, nurses, and administrators.',
     'My work combines hands-on field training, technical troubleshooting, UI design, and web development. I am fluent in React/TypeScript and design tools like Figma, and I bridge the gap between product teams and clinical end-users effectively.',
@@ -27,7 +27,7 @@ export const stats = [
 ];
 
 export const typedPhrases = [
-  'TeleICU | Support Field Manager',
+  'TeleICU | Field Solution Manager',
   'Healthcare IT Professional',
   'React / TypeScript Developer',
   'Field Operations Leader',
@@ -36,13 +36,13 @@ export const typedPhrases = [
 
 export const experience = [
   {
-    role: 'Support Field Manager',
+    role: 'Field Solution Manager',
     org: '10BedICU · eGov Foundation',
     period: 'Apr 2026 – Present',
     badges: ['Current', 'Promoted'],
     client: 'HFWS, Govt. of Karnataka · CARE 3.0 WMS',
     bullets: [
-      'Promoted from Hub Engineer to Support Field Manager — overseeing field operations and support delivery across multiple hospital hubs in Karnataka.',
+      'Promoted from Hub Engineer to Field Solution Manager — overseeing field operations and support delivery across multiple hospital hubs in Karnataka.',
       'Lead and coordinate field support teams, ensuring timely resolution of TeleICU and HMIS issues across government hospitals.',
       'Manage end-to-end support workflows: escalation handling, SLA tracking, and on-ground team coordination.',
       'Act as primary point of contact between hospital staff, district teams, and the central product/engineering team.',
