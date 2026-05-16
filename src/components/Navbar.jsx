@@ -32,7 +32,7 @@ export default function Navbar({ theme, toggleTheme }) {
           group-hover:bg-green-bright transition-colors duration-200">SD</div>
         <div>
           <div className="font-sans text-[0.8rem] text-ink tracking-wider leading-tight">Santhosh Devale</div>
-          <div className="font-sans text-[0.62rem] text-green-primary tracking-widest leading-tight">Support Field Manager</div>
+          <div className="font-sans text-[0.62rem] text-green-primary tracking-widest leading-tight">Field Solution Manager</div>
         </div>
       </a>
 
@@ -41,7 +41,7 @@ export default function Navbar({ theme, toggleTheme }) {
           <li key={l.href}>
             <a href={l.href}
               className="font-sans text-[0.68rem] tracking-[0.12em] uppercase text-ink-muted hover:text-green-primary transition-colors duration-200">
-              <span className="text-green-primary opacity-60 mr-1">{l.num}_</span>{l.label}
+              <span className="text-green-primary opacity-60 mr-1"></span>{l.label}
             </a>
           </li>
         ))}
